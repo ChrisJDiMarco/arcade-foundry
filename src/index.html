@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>Arcade Foundry</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="shop" aria-label="Arcade Foundry">
+  <section class="cabinet-shell" aria-label="Playable arcade cabinet">
+    <div class="marquee"><span>ARCADE FOUNDRY</span><i></i><b>CARTRIDGE LAB</b></div>
+    <div class="cabinet-body">
+      <div class="cabinet-patina" aria-hidden="true"></div><div class="corner-bolts" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="crt-bezel"><div class="screen-meta"><span id="gameTitle">NEON BASTION</span><span id="statusLed">READY</span></div><div class="crt"><iframe id="gameFrame" title="Playable game cartridge" sandbox="allow-scripts" tabindex="0"></iframe><div class="scanlines"></div><div class="screen-glare"></div></div><div class="screen-legend">INSERT IDEA · PLAY IMMEDIATELY</div></div>
+      <section class="control-deck" aria-label="Cabinet controls"><div class="joystick"><i></i></div><div class="buttons"><button class="arcade-button blue" data-key="ArrowLeft" aria-label="Left">◀</button><button class="arcade-button blue" data-key="ArrowUp" aria-label="Up">▲</button><button class="arcade-button blue" data-key="ArrowRight" aria-label="Right">▶</button><button class="arcade-button red" data-key=" " aria-label="Fire">FIRE</button><button class="arcade-button amber" data-key="r" aria-label="Restart">R</button></div><button class="play-button" id="playButton">PLAY</button></section>
+      <div class="lower-cabinet"><div class="speaker"></div><div class="coin-door"><small>25¢</small><b>INSERT<br>IDEA</b><i></i></div><div class="cartridge-slot"><span>ORIGINAL<br>ONLY</span></div></div>
+    </div>
+  </section>
+  <aside class="forge-panel" aria-label="Cartridge forge">
+    <header><div class="brand-line"><span class="signal"></span>CARTRIDGE FORGE</div><button class="small-button" id="serviceButton">SERVICE</button></header>
+    <section class="prompt-area"><label for="prompt">WHAT SHOULD WE BUILD?</label><textarea id="prompt" maxlength="1200" placeholder="A one-button rooftop chase where neon drones weave between chimneys…"></textarea><p>Describe an original mechanic or genre. No branded-game clones.</p><button id="forgeButton" class="forge-button"><span>✦</span> FORGE ORIGINAL GAME</button></section>
+    <section class="cartridge-card"><span class="eyebrow">LOADED CARTRIDGE</span><h1 id="cardTitle">Neon Bastion</h1><p id="cardTagline">Hold the last electric line against a falling swarm.</p><div id="controlList" class="control-list"></div></section>
+    <section class="workbench"><span class="eyebrow">WORKBENCH</span><button id="exportButton" class="work-button">Export cartridge</button><button id="importButton" class="work-button">Load cartridge</button><button id="factoryButton" class="work-button danger">Restore factory game</button></section>
+    <footer><span id="statusText">Factory cartridge online.</span><span class="safe">SANDBOXED PLAY</span></footer>
+  </aside>
+</main>
+<section id="serviceModal" class="service-modal" aria-hidden="true"><div class="service-card"><header><div><span class="eyebrow">SERVICE BAY</span><h2>Edit cartridge code</h2></div><button id="closeService" class="close-button" aria-label="Close service bay">×</button></header><p>Use this for hand-authored original games. Network, storage, popups, parent-frame access, and privileged APIs are blocked.</p><label for="codeEditor">SELF-CONTAINED HTML CANVAS CARTRIDGE</label><textarea id="codeEditor" spellcheck="false"></textarea><label for="serviceTitle">TITLE</label><input id="serviceTitle" maxlength="42"><label for="serviceTagline">ONE-LINE BRIEF</label><input id="serviceTagline" maxlength="130"><div class="service-actions"><button id="applyService" class="forge-button">APPLY & PLAY</button><button id="cancelService" class="small-button">CANCEL</button></div></div></section>
+<script src="renderer.js"></script></body></html>
